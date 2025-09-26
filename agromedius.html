@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMedius - The Future of Farmer Dealership</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .message-box {
+            animation: fadeInOut 3s forwards;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="font-bold text-xl text-green-600">AgroMedius</span>
+            </a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-600 hover:text-green-500 transition-colors duration-300">About</a>
+                <a href="#crops" class="text-gray-600 hover:text-green-500 transition-colors duration-300">Crop Details</a>
+                <a href="#calendar" class="text-gray-600 hover:text-green-500 transition-colors duration-300">Crop Calendar</a>
+                <a href="#marketplace" class="text-gray-600 hover:text-green-500 transition-colors duration-300">Marketplace</a>
+                <a href="#prediction" class="text-gray-600 hover:text-green-500 transition-colors duration-300">Price Predictor</a>
+                <a href="#farmers" class="text-gray-600 hover:text-green-500 transition-colors duration-300">Farmers & Wholesalers</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-green-500 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">About</a>
+            <a href="#crops" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Crop Details</a>
+            <a href="#calendar" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Crop Calendar</a>
+            <a href="#marketplace" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Marketplace</a>
+            <a href="#prediction" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Price Predictor</a>
+            <a href="#farmers" class="block px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Farmers & Wholesalers</a>
+        </div>
+    </header>
+
+    <!-- Hero Section / Main Dashboard -->
+    <section id="about" class="bg-green-50 py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                    AgroMedius: Bridging the Gap <br class="hidden md:inline"> between Farmers & <span class="text-gradient">Wholesalers</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+                    Your direct link to the agricultural supply chain. We minimize waste and increase profitability by connecting you with the right produce at the right time.
+                </p>
+                <a href="#marketplace" class="mt-8 inline-block px-8 py-4 bg-green-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-700 transition-transform duration-300 transform hover:scale-105">
+                    Explore the Marketplace
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+                <img src="https://placehold.co/500x350/E9FBE7/22c55e?text=AgroMedius" alt="Farmers working in a field" class="rounded-xl shadow-2xl w-full max-w-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Details Section -->
+    <section id="crops" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Essential Crop Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Crop Card 1 -->
+                <div class="card bg-white rounded-xl shadow-lg p-6">
+                    <img src="https://placehold.co/400x250/F0F9FF/22c55e?text=Mangoes" alt="Mangoes" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Mangoes</h3>
+                    <p class="text-gray-500 text-sm mt-1">
+                        Known for their sweet, juicy flesh and vibrant aroma. Harvested in summer.
+                    </p>
+                    <p class="text-gray-700 mt-2">
+                        **Growth Period:** 3-5 years from planting to first fruit.
+                    </p>
+                    <p class="text-gray-700">
+                        **Peak Season:** April - August
+                    </p>
+                </div>
+                <!-- Crop Card 2 -->
+                <div class="card bg-white rounded-xl shadow-lg p-6">
+                    <img src="https://placehold.co/400x250/F0F9FF/22c55e?text=Rice" alt="Rice" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Rice</h3>
+                    <p class="text-gray-500 text-sm mt-1">
+                        A staple food crop grown extensively in India.
+                    </p>
+                    <p class="text-gray-700 mt-2">
+                        **Growth Period:** 3-6 months (depending on variety).
+                    </p>
+                    <p class="text-gray-700">
+                        **Peak Season:** Varies by region, typically Kharif (June-Nov) and Rabi (Nov-April)
+                    </p>
+                </div>
+                <!-- Crop Card 3 -->
+                <div class="card bg-white rounded-xl shadow-lg p-6">
+                    <img src="https://placehold.co/400x250/F0F9FF/22c55e?text=Potatoes" alt="Potatoes" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Potatoes</h3>
+                    <p class="text-gray-500 text-sm mt-1">
+                        Versatile and widely cultivated root vegetable.
+                    </p>
+                    <p class="text-gray-700 mt-2">
+                        **Growth Period:** 2-4 months.
+                    </p>
+                    <p class="text-gray-700">
+                        **Peak Season:** October - February
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Calendar Section -->
+    <section id="calendar" class="bg-gray-100 py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Seasonal Crop Calendar</h2>
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Jan-Mar</h4>
+                        <p class="text-sm text-gray-600">Wheat, Mustard, Peas</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Apr-Jun</h4>
+                        <p class="text-sm text-gray-600">Mango, Watermelon, Jute</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Jul-Sep</h4>
+                        <p class="text-sm text-gray-600">Rice, Maize, Soybeans</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Oct-Dec</h4>
+                        <p class="text-sm text-gray-600">Potatoes, Onions, Sugarcane</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">All Year</h4>
+                        <p class="text-sm text-gray-600">Banana, Papaya, Lemon</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Upcoming</h4>
+                        <p class="text-sm text-gray-600">Future Listings...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section id="marketplace" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Direct Farmer-Wholesaler Marketplace</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="https://placehold.co/300x200/F0F9FF/22c55e?text=Organic+Tomatoes" alt="Organic Tomatoes" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Organic Tomatoes</h3>
+                    <p class="text-green-500 font-bold text-xl mt-2">₹40 / kg</p>
+                    <p class="text-gray-500 text-sm mt-1">Location: Bengaluru, Karnataka</p>
+                    <p class="text-gray-500 text-sm">Harvest Date: 15-Nov-2025</p>
+                    <a href="#farmers" class="mt-4 w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Contact Farmer
+                    </a>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="https://placehold.co/300x200/F0F9FF/22c55e?text=Fresh+Potatoes" alt="Fresh Potatoes" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Fresh Potatoes</h3>
+                    <p class="text-green-500 font-bold text-xl mt-2">₹25 / kg</p>
+                    <p class="text-gray-500 text-sm mt-1">Location: Hyderabad, Telangana</p>
+                    <p class="text-gray-500 text-sm">Harvest Date: 01-Dec-2025</p>
+                    <a href="#farmers" class="mt-4 w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Contact Farmer
+                    </a>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="https://placehold.co/300x200/F0F9FF/22c55e?text=Rice" alt="Rice" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold text-gray-900">Fine Quality Rice</h3>
+                    <p class="text-green-500 font-bold text-xl mt-2">₹60 / kg</p>
+                    <p class="text-gray-500 text-sm mt-1">Location: Chennai, Tamil Nadu</p>
+                    <p class="text-gray-500 text-sm">Harvest Date: 20-Dec-2025</p>
+                    <a href="#farmers" class="mt-4 w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-300">
+                        Contact Farmer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Prediction Section -->
+    <section id="prediction" class="bg-gray-100 py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Predict Market Prices</h2>
+            <div class="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <form id="price-prediction-form" class="space-y-6">
+                    <div>
+                        <label for="crop" class="block text-sm font-medium text-gray-700">Select Crop</label>
+                        <select id="crop" name="crop" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="potatoes">Potatoes</option>
+                            <option value="rice">Rice</option>
+                            <option value="mangoes">Mangoes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700">Enter Your Location</label>
+                        <input type="text" id="location" name="location" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500" placeholder="e.g., Bengaluru">
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition-colors duration-300">
+                        Predict Price
+                    </button>
+                </form>
+                <div id="result-container" class="mt-8 hidden">
+                    <div class="bg-green-100 border border-green-200 text-green-700 p-6 rounded-lg text-center">
+                        <h4 class="text-xl font-semibold mb-2">Predicted Price</h4>
+                        <p id="predicted-price" class="text-3xl font-bold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmer & Wholesaler Details Section -->
+    <section id="farmers" class="py-20 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Farmer & Wholesaler Profiles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Farmer Card 1 -->
+                <div class="card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <img src="https://placehold.co/100x100/E9FBE7/22c55e?text=F1" alt="Farmer Profile" class="rounded-full mx-auto w-24 h-24 object-cover mb-4">
+                    <h3 class="text-2xl font-semibold text-gray-900">Rajesh Kumar</h3>
+                    <p class="text-gray-500 text-sm mt-1">Farmer</p>
+                    <p class="text-gray-700 mt-2">Location: Bengaluru, Karnataka</p>
+                    <p class="text-gray-700 mt-1">Crops: Tomatoes, Brinjal</p>
+                    <p class="text-green-600 font-semibold mt-2">Contact: 98765-XXXXX</p>
+                </div>
+                <!-- Wholesaler Card 1 -->
+                <div class="card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <img src="https://placehold.co/100x100/F0F9FF/22c55e?text=W1" alt="Wholesaler Profile" class="rounded-full mx-auto w-24 h-24 object-cover mb-4">
+                    <h3 class="text-2xl font-semibold text-gray-900">Apex Agri Solutions</h3>
+                    <p class="text-gray-500 text-sm mt-1">Wholesaler</p>
+                    <p class="text-gray-700 mt-2">Location: Hyderabad, Telangana</p>
+                    <p class="text-gray-700 mt-1">Interests: Rice, Maize, Wheat</p>
+                    <p class="text-green-600 font-semibold mt-2">Contact: 98765-XXXXX</p>
+                </div>
+                 <!-- Farmer Card 2 -->
+                 <div class="card bg-white rounded-xl shadow-lg p-6 text-center">
+                    <img src="https://placehold.co/100x100/E9FBE7/22c55e?text=F2" alt="Farmer Profile" class="rounded-full mx-auto w-24 h-24 object-cover mb-4">
+                    <h3 class="text-2xl font-semibold text-gray-900">Pooja Sharma</h3>
+                    <p class="text-gray-500 text-sm mt-1">Farmer</p>
+                    <p class="text-gray-700 mt-2">Location: Pune, Maharashtra</p>
+                    <p class="text-gray-700 mt-1">Crops: Grapes, Onions</p>
+                    <p class="text-green-600 font-semibold mt-2">Contact: 98765-XXXXX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-10 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+            <p class="text-gray-400">Email: info@agromedius.com | Phone: +91 98765 43210</p>
+            <p class="mt-6 text-gray-500 text-sm">&copy; 2025 AgroMedius. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Price prediction form logic
+        const form = document.getElementById('price-prediction-form');
+        const resultContainer = document.getElementById('result-container');
+        const predictedPriceElement = document.getElementById('predicted-price');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const crop = document.getElementById('crop').value;
+            const location = document.getElementById('location').value;
+
+            // Simple mock data for demonstration
+            const mockPrices = {
+                tomatoes: { min: 38, max: 45 },
+                potatoes: { min: 22, max: 28 },
+                rice: { min: 55, max: 65 },
+                mangoes: { min: 80, max: 120 }
+            };
+
+            const price = Math.floor(Math.random() * (mockPrices[crop].max - mockPrices[crop].min + 1)) + mockPrices[crop].min;
+
+            predictedPriceElement.textContent = 'Predicting...';
+            resultContainer.classList.remove('hidden');
+
+            await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
+
+            predictedPriceElement.textContent = `₹${price} / kg`;
+
+            const msgBox = document.createElement('div');
+            msgBox.className = 'fixed top-4 left-1/2 -translate-x-1/2 p-4 rounded-lg shadow-xl text-center z-[100] transition-transform duration-500 ease-out transform scale-100 bg-green-500 text-white message-box';
+            msgBox.textContent = `Predicted price for ${crop} in ${location} is ₹${price} / kg.`;
+            document.body.appendChild(msgBox);
+
+            setTimeout(() => {
+                msgBox.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
